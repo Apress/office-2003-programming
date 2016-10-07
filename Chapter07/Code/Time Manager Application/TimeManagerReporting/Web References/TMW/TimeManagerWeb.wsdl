@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org/TimeManagerWeb/TimeManagerWeb" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/TimeManagerWeb/TimeManagerWeb" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/TimeManagerWeb/TimeManagerWeb">
+      <s:element name="SaveHourObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="s0:tmHours" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="tmHours">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProjectName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="hours" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveHourObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveHourObjResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveHourArrayList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="objCol" type="s0:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveHourArrayListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveHourArrayListResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestConnection">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestConnectionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="tmUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nameLast" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nameFirst" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="admin" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s0:tmUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllProjects">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="Project">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProjectName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Project" nillable="true" type="s0:Project" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllProjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllProjectsResult" type="s0:ArrayOfProject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectObj" type="s0:Project" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddProjectResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectObj" type="s0:Project" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUsers">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="ArrayOfTmUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="tmUser" nillable="true" type="s0:tmUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUsersResult" type="s0:ArrayOfTmUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userObj" type="s0:tmUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="originalUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userObj" type="s0:tmUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userObj" type="s0:tmUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectObj" type="s0:Project" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteProjectResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OriginalProjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectObj" type="s0:Project" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateProjectResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectReportInfoByEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTmHours">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="tmHours" nillable="true" type="s0:tmHours" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProjectReportInfoByEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectReportInfoByEmployeeResult" type="s0:ArrayOfTmHours" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="SaveHourObjSoapIn">
+    <part name="parameters" element="s0:SaveHourObj" />
+  </message>
+  <message name="SaveHourObjSoapOut">
+    <part name="parameters" element="s0:SaveHourObjResponse" />
+  </message>
+  <message name="SaveHourArrayListSoapIn">
+    <part name="parameters" element="s0:SaveHourArrayList" />
+  </message>
+  <message name="SaveHourArrayListSoapOut">
+    <part name="parameters" element="s0:SaveHourArrayListResponse" />
+  </message>
+  <message name="TestConnectionSoapIn">
+    <part name="parameters" element="s0:TestConnection" />
+  </message>
+  <message name="TestConnectionSoapOut">
+    <part name="parameters" element="s0:TestConnectionResponse" />
+  </message>
+  <message name="LoginSoapIn">
+    <part name="parameters" element="s0:Login" />
+  </message>
+  <message name="LoginSoapOut">
+    <part name="parameters" element="s0:LoginResponse" />
+  </message>
+  <message name="GetAllProjectsSoapIn">
+    <part name="parameters" element="s0:GetAllProjects" />
+  </message>
+  <message name="GetAllProjectsSoapOut">
+    <part name="parameters" element="s0:GetAllProjectsResponse" />
+  </message>
+  <message name="AddProjectSoapIn">
+    <part name="parameters" element="s0:AddProject" />
+  </message>
+  <message name="AddProjectSoapOut">
+    <part name="parameters" element="s0:AddProjectResponse" />
+  </message>
+  <message name="GetAllUsersSoapIn">
+    <part name="parameters" element="s0:GetAllUsers" />
+  </message>
+  <message name="GetAllUsersSoapOut">
+    <part name="parameters" element="s0:GetAllUsersResponse" />
+  </message>
+  <message name="AddUserSoapIn">
+    <part name="parameters" element="s0:AddUser" />
+  </message>
+  <message name="AddUserSoapOut">
+    <part name="parameters" element="s0:AddUserResponse" />
+  </message>
+  <message name="UpdateUserSoapIn">
+    <part name="parameters" element="s0:UpdateUser" />
+  </message>
+  <message name="UpdateUserSoapOut">
+    <part name="parameters" element="s0:UpdateUserResponse" />
+  </message>
+  <message name="DeleteUserSoapIn">
+    <part name="parameters" element="s0:DeleteUser" />
+  </message>
+  <message name="DeleteUserSoapOut">
+    <part name="parameters" element="s0:DeleteUserResponse" />
+  </message>
+  <message name="DeleteProjectSoapIn">
+    <part name="parameters" element="s0:DeleteProject" />
+  </message>
+  <message name="DeleteProjectSoapOut">
+    <part name="parameters" element="s0:DeleteProjectResponse" />
+  </message>
+  <message name="UpdateProjectSoapIn">
+    <part name="parameters" element="s0:UpdateProject" />
+  </message>
+  <message name="UpdateProjectSoapOut">
+    <part name="parameters" element="s0:UpdateProjectResponse" />
+  </message>
+  <message name="GetProjectReportInfoByEmployeeSoapIn">
+    <part name="parameters" element="s0:GetProjectReportInfoByEmployee" />
+  </message>
+  <message name="GetProjectReportInfoByEmployeeSoapOut">
+    <part name="parameters" element="s0:GetProjectReportInfoByEmployeeResponse" />
+  </message>
+  <portType name="TimeManagerWebSoap">
+    <operation name="SaveHourObj">
+      <documentation>Save an individual hour record</documentation>
+      <input message="s0:SaveHourObjSoapIn" />
+      <output message="s0:SaveHourObjSoapOut" />
+    </operation>
+    <operation name="SaveHourArrayList">
+      <documentation>Saves all the Hour objects in an array list.</documentation>
+      <input message="s0:SaveHourArrayListSoapIn" />
+      <output message="s0:SaveHourArrayListSoapOut" />
+    </operation>
+    <operation name="TestConnection">
+      <documentation>Tests the database connection settings.  True indicates that a successful connection was made.  False indicates there was an error opening the connection.</documentation>
+      <input message="s0:TestConnectionSoapIn" />
+      <output message="s0:TestConnectionSoapOut" />
+    </operation>
+    <operation name="Login">
+      <documentation>Login will return a user object given a userId and a password.  If the userId and password do not match a user in the database, nothing will be returned.</documentation>
+      <input message="s0:LoginSoapIn" />
+      <output message="s0:LoginSoapOut" />
+    </operation>
+    <operation name="GetAllProjects">
+      <documentation>Returns a string array containing a list of the projects.</documentation>
+      <input message="s0:GetAllProjectsSoapIn" />
+      <output message="s0:GetAllProjectsSoapOut" />
+    </operation>
+    <operation name="AddProject">
+      <documentation>Adds a new project to the project table</documentation>
+      <input message="s0:AddProjectSoapIn" />
+      <output message="s0:AddProjectSoapOut" />
+    </operation>
+    <operation name="GetAllUsers">
+      <documentation>Returns an array containing all of the users</documentation>
+      <input message="s0:GetAllUsersSoapIn" />
+      <output message="s0:GetAllUsersSoapOut" />
+    </operation>
+    <operation name="AddUser">
+      <documentation>Adds the specified user</documentation>
+      <input message="s0:AddUserSoapIn" />
+      <output message="s0:AddUserSoapOut" />
+    </operation>
+    <operation name="UpdateUser">
+      <documentation>Adds the specified user</documentation>
+      <input message="s0:UpdateUserSoapIn" />
+      <output message="s0:UpdateUserSoapOut" />
+    </operation>
+    <operation name="DeleteUser">
+      <documentation>Deletes the specified user</documentation>
+      <input message="s0:DeleteUserSoapIn" />
+      <output message="s0:DeleteUserSoapOut" />
+    </operation>
+    <operation name="DeleteProject">
+      <documentation>Deletes the specified project</documentation>
+      <input message="s0:DeleteProjectSoapIn" />
+      <output message="s0:DeleteProjectSoapOut" />
+    </operation>
+    <operation name="UpdateProject">
+      <documentation>Updates the specified project.</documentation>
+      <input message="s0:UpdateProjectSoapIn" />
+      <output message="s0:UpdateProjectSoapOut" />
+    </operation>
+    <operation name="GetProjectReportInfoByEmployee">
+      <documentation>Returns project names and hour information.</documentation>
+      <input message="s0:GetProjectReportInfoByEmployeeSoapIn" />
+      <output message="s0:GetProjectReportInfoByEmployeeSoapOut" />
+    </operation>
+  </portType>
+  <binding name="TimeManagerWebSoap" type="s0:TimeManagerWebSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="SaveHourObj">
+      <soap:operation soapAction="http://tempuri.org/TimeManagerWeb/TimeManagerWeb/SaveHourObj" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SaveHourArrayList">
+      <soap:operation soapAction="http://tempuri.org/TimeManagerWeb/TimeManagerWeb/SaveHourArrayList" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TestConnection">
+      <soap:operation soapAction="http://tempuri.org/TimeManagerWeb/TimeManagerWeb/TestConnection" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/TimeManagerWeb/TimeManagerWeb/Login" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetAllProjects">
+      <soap:operation soapAction="http://tempuri.org/TimeManagerWeb/TimeManagerWeb/GetAllProjects" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddProject">
+      <soap:operation soapAction="http://tempuri.org/TimeManagerWeb/TimeManagerWeb/AddProject" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetAllUsers">
+      <soap:operation soapAction="http://tempuri.org/TimeManagerWeb/TimeManagerWeb/GetAllUsers" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/TimeManagerWeb/TimeManagerWeb/AddUser" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/TimeManagerWeb/TimeManagerWeb/UpdateUser" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/TimeManagerWeb/TimeManagerWeb/DeleteUser" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DeleteProject">
+      <soap:operation soapAction="http://tempuri.org/TimeManagerWeb/TimeManagerWeb/DeleteProject" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateProject">
+      <soap:operation soapAction="http://tempuri.org/TimeManagerWeb/TimeManagerWeb/UpdateProject" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetProjectReportInfoByEmployee">
+      <soap:operation soapAction="http://tempuri.org/TimeManagerWeb/TimeManagerWeb/GetProjectReportInfoByEmployee" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="TimeManagerWeb">
+    <port name="TimeManagerWebSoap" binding="s0:TimeManagerWebSoap">
+      <soap:address location="http://localhost/TimeManagerWeb/TimeManagerWeb.asmx" />
+    </port>
+  </service>
+</definitions>

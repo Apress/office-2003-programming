@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PresentationGenerator", "PresentationGenerator\PresentationGenerator.vbproj", "{BEDB432A-4F8C-4C5C-A674-20FB11B67C6F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PresentationGeneratorSetup", "PresentationGeneratorSetup\PresentationGeneratorSetup.vdproj", "{D85D30B8-5B36-44C0-8B37-FC58540886BA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{BEDB432A-4F8C-4C5C-A674-20FB11B67C6F}.Debug.ActiveCfg = Debug|.NET
+		{BEDB432A-4F8C-4C5C-A674-20FB11B67C6F}.Debug.Build.0 = Debug|.NET
+		{BEDB432A-4F8C-4C5C-A674-20FB11B67C6F}.Release.ActiveCfg = Release|.NET
+		{BEDB432A-4F8C-4C5C-A674-20FB11B67C6F}.Release.Build.0 = Release|.NET
+		{D85D30B8-5B36-44C0-8B37-FC58540886BA}.Debug.ActiveCfg = Debug
+		{D85D30B8-5B36-44C0-8B37-FC58540886BA}.Release.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

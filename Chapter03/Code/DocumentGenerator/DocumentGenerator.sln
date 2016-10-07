@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DocumentGenerator", "DocumentGenerator\DocumentGenerator.vbproj", "{0E380EEF-B172-4428-A8E9-67C8385DAF51}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DocumentGeneratorSetup", "DocumentGeneratorSetup\DocumentGeneratorSetup.vdproj", "{FE30B4DD-B09C-45D1-9E24-ADF5DA69FE18}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{0E380EEF-B172-4428-A8E9-67C8385DAF51}.Debug.ActiveCfg = Debug|.NET
+		{0E380EEF-B172-4428-A8E9-67C8385DAF51}.Debug.Build.0 = Debug|.NET
+		{0E380EEF-B172-4428-A8E9-67C8385DAF51}.Release.ActiveCfg = Release|.NET
+		{0E380EEF-B172-4428-A8E9-67C8385DAF51}.Release.Build.0 = Release|.NET
+		{FE30B4DD-B09C-45D1-9E24-ADF5DA69FE18}.Debug.ActiveCfg = Debug
+		{FE30B4DD-B09C-45D1-9E24-ADF5DA69FE18}.Release.ActiveCfg = Release
+		{FE30B4DD-B09C-45D1-9E24-ADF5DA69FE18}.Release.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

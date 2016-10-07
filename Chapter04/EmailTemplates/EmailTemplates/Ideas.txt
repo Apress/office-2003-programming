@@ -1,0 +1,9 @@
+1.  Add Tags for inserting the Client's information
+2.  Add a context menu for using the currently selected email as the recipient
+3.  Add a commandbarbutton to the Inspector that lists available ContactItems.  
+		Upon selection of a new one, the tags and TO field would be updated.
+4.  Add handling for the situaition where the email address of the current selection is 
+		not in the Contacts folder.
+5.  Highlight any tag not matched to a ContactItem property.
+6.  Prevent the email from sending if an unfilled tag still exists.
+7.  

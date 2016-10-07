@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TimeManagerWeb", "http://localhost/TimeManagerWeb/TimeManagerWeb.vbproj", "{5731D8AB-6216-4556-A7A3-B09105F2CE58}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TimeManagerEntry", "TimeManagerEntry\TimeManagerEntry.vbproj", "{332BA85E-F280-4757-A175-1B6CD3A0A2C4}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TimeManagerReporting", "TimeManagerReporting\TimeManagerReporting.vbproj", "{3FE76021-B4E2-438B-ADD0-A475A35F30DC}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5731D8AB-6216-4556-A7A3-B09105F2CE58}.Debug.ActiveCfg = Debug|.NET
+		{5731D8AB-6216-4556-A7A3-B09105F2CE58}.Debug.Build.0 = Debug|.NET
+		{5731D8AB-6216-4556-A7A3-B09105F2CE58}.Release.ActiveCfg = Release|.NET
+		{5731D8AB-6216-4556-A7A3-B09105F2CE58}.Release.Build.0 = Release|.NET
+		{332BA85E-F280-4757-A175-1B6CD3A0A2C4}.Debug.ActiveCfg = Debug|.NET
+		{332BA85E-F280-4757-A175-1B6CD3A0A2C4}.Debug.Build.0 = Debug|.NET
+		{332BA85E-F280-4757-A175-1B6CD3A0A2C4}.Release.ActiveCfg = Release|.NET
+		{332BA85E-F280-4757-A175-1B6CD3A0A2C4}.Release.Build.0 = Release|.NET
+		{3FE76021-B4E2-438B-ADD0-A475A35F30DC}.Debug.ActiveCfg = Debug|.NET
+		{3FE76021-B4E2-438B-ADD0-A475A35F30DC}.Debug.Build.0 = Debug|.NET
+		{3FE76021-B4E2-438B-ADD0-A475A35F30DC}.Release.ActiveCfg = Release|.NET
+		{3FE76021-B4E2-438B-ADD0-A475A35F30DC}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

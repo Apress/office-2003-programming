@@ -1,0 +1,28 @@
+<SD:manifest xmlns:SD="http://schemas.microsoft.com/office/xmlexpansionpacks/2003">
+	<SD:version>1.1</SD:version>
+	<SD:updateFrequency>20160</SD:updateFrequency>
+	<SD:uri>urn:schemas-bravocorp-com.namespaces.event.simple</SD:uri>
+	<SD:solution>
+		<SD:solutionID>EventOrder.DocActions</SD:solutionID>
+		<SD:type>smartDocument</SD:type>
+		<SD:alias lcid="*">BravoCorp Event Order - VB .NET</SD:alias>
+		<SD:file>
+			<SD:type>solutionActionHandler</SD:type>
+			<SD:version>1.0</SD:version>
+			<SD:filePath>C:\clients\RealOfficeVB\Chapters\Chapter09\Code\EventOrder\EventOrder\bin\EventOrder.dll</SD:filePath>
+			<SD:CLSNAME>EventOrder.DocActions</SD:CLSNAME>
+			<runFromServer>True</runFromServer>
+			<SD:managed/>
+		</SD:file>
+	</SD:solution>
+	<SD:solution>
+		<SD:solutionID>schema</SD:solutionID>
+		<SD:type>schema</SD:type>
+		<SD:alias lcid="*">BravoCorp Event Order Schema</SD:alias>
+		<SD:file>
+			<SD:type>schema</SD:type>
+			<SD:version>1.0</SD:version>
+			<SD:filePath>C:\clients\RealOfficeVB\Chapters\Chapter09\Code\EventOrder\EventOrder\simple.xsd</SD:filePath>
+		</SD:file>
+	</SD:solution>
+</SD:manifest>

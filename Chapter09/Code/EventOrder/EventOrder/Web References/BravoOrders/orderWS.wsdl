@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="urn:schemas-bravocorp-com.namespaces.event.simple" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="urn:schemas-bravocorp-com.namespaces.event.simple" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="urn:schemas-bravocorp-com.namespaces.event.simple">
+      <s:element name="SubmitNewOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitNewOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitNewOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="SubmitNewOrderSoapIn">
+    <part name="parameters" element="s0:SubmitNewOrder" />
+  </message>
+  <message name="SubmitNewOrderSoapOut">
+    <part name="parameters" element="s0:SubmitNewOrderResponse" />
+  </message>
+  <portType name="ProcessOrdersSoap">
+    <operation name="SubmitNewOrder">
+      <documentation>Submit New Event Site Order</documentation>
+      <input message="s0:SubmitNewOrderSoapIn" />
+      <output message="s0:SubmitNewOrderSoapOut" />
+    </operation>
+  </portType>
+  <binding name="ProcessOrdersSoap" type="s0:ProcessOrdersSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="SubmitNewOrder">
+      <soap:operation soapAction="urn:schemas-bravocorp-com.namespaces.event.simple/SubmitNewOrder" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ProcessOrders">
+    <port name="ProcessOrdersSoap" binding="s0:ProcessOrdersSoap">
+      <soap:address location="http://localhost/BravoOrdersWS/orderWS.asmx" />
+    </port>
+  </service>
+</definitions>

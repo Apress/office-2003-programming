@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Metadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0.0.0" xmlns="http://schemas.microsoft.com/InformationBridge/2004/Metadata">
+  <MetadataScopes>
+    <MetadataScope Name="http://c8/webservices" Version="1.0">
+      <Ports>
+        <Port xsi:type="PortFileXml" Name="http://WebServices/CRM" IsCached="false" AuthenticationTypeValue="None">
+          <Data>
+            <xs:schema xmlns:tns="http://WebServices/CRM" elementFormDefault="qualified" targetNamespace="http://WebServices/CRM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <xs:import namespace="urn-IBFHOL-CRM" />
+              <xs:element name="GetAccount">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" xmlns:q1="urn-IBFHOL-CRM" ref="q1:AccountID" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="GetAccountResponse">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" xmlns:q2="urn-IBFHOL-CRM" ref="q2:Account" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TestGetAccount">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" name="AccountName" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TestGetAccountResponse">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="1" xmlns:q3="urn-IBFHOL-CRM" ref="q3:Account" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:schema>
+          </Data>
+        </Port>
+        <Port xsi:type="PortFileXml" Name="urn-IBFHOL-CRM" IsCached="false" AuthenticationTypeValue="None">
+          <Data>
+            <xs:schema xmlns:tns="urn-IBFHOL-CRM" elementFormDefault="qualified" targetNamespace="urn-IBFHOL-CRM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <xs:element name="AccountID" type="tns:AccountID" />
+              <xs:complexType name="AccountID">
+                <xs:attribute name="ID" type="xs:string" />
+              </xs:complexType>
+              <xs:element name="Account" type="tns:Account" />
+              <xs:complexType name="Account">
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="AccountName" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="Address" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="City" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="StateRegion" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="PostalCode" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="Country" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="Phone" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="Fax" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="WebPage" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="AccountStatus" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="IndustryClassification" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="Region" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="AccountExecutive" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:schema>
+          </Data>
+        </Port>
+        <Port xsi:type="PortSoap" Name="CrmWebServiceSoap" Location="http://localhost/c8/CRMWebService.asmx" IsCached="false" AuthenticationTypeValue="Windows" />
+      </Ports>
+      <Operations>
+        <Operation xsi:type="OperationSoapRequest" Name="GetAccount" TimeOut="0" IsUpdate="false" PortName="CrmWebServiceSoap" SoapAction="http://WebServices/CRM/GetAccount" xmlns:q1="http://WebServices/CRM" SoapBodyWrapper="q1:GetAccount">
+          <InputSchemas>
+            <SchemaInstance SchemaName="AccountID (urn-IBFHOL-CRM)" Index="1" />
+          </InputSchemas>
+          <OutputSchemas>
+            <SchemaInstance SchemaName="Account (urn-IBFHOL-CRM)" Index="1" />
+          </OutputSchemas>
+        </Operation>
+        <Operation xsi:type="OperationSoapRequest" Name="TestGetAccount" TimeOut="0" IsUpdate="false" PortName="CrmWebServiceSoap" SoapAction="http://WebServices/CRM/TestGetAccount">
+          <InputSchemas>
+            <SchemaInstance SchemaName="TestGetAccount (http://WebServices/CRM)" Index="1" />
+          </InputSchemas>
+          <OutputSchemas>
+            <SchemaInstance SchemaName="Account (urn-IBFHOL-CRM)" Index="1" />
+          </OutputSchemas>
+        </Operation>
+      </Operations>
+      <Schemas>
+        <Schema xsi:type="SchemaXsd" Name="Account (urn-IBFHOL-CRM)" PortName="urn-IBFHOL-CRM" xmlns:q2="urn-IBFHOL-CRM" Element="q2:Account" />
+        <Schema xsi:type="SchemaXsd" Name="AccountID (urn-IBFHOL-CRM)" PortName="urn-IBFHOL-CRM" xmlns:q3="urn-IBFHOL-CRM" Element="q3:AccountID" />
+        <Schema xsi:type="SchemaXsd" Name="TestGetAccount (http://WebServices/CRM)" PortName="http://WebServices/CRM" xmlns:q4="http://WebServices/CRM" Element="q4:TestGetAccount" />
+      </Schemas>
+    </MetadataScope>
+  </MetadataScopes>
+</Metadata>

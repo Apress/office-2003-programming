@@ -1,0 +1,19 @@
+<?xml version="1.0"?><?mso-infoPathSolution productVersion="11.0.6250" PIVersion="1.0.0.0" href="file:///C:\Inetpub\wwwroot\EventIssues\InfoPathForms\TaskForm.xsn" name="urn:schemas-microsoft-com:office:infopath:TaskForm:-myXSD-2004-07-12T03-02-23" solutionVersion="1.0.0.11" ?><?mso-application progid="InfoPath.Document"?><my:TaskData xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2004-07-12T03:02:23" xml:lang="en-us">
+    <my:task_id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</my:task_id>
+    <my:task_order xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</my:task_order>
+    <my:tracking_id xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1</my:tracking_id>
+    <my:task>aadfasdf</my:task>
+    <my:assignee_email>ty@credera.com</my:assignee_email>
+    <my:comments></my:comments>
+    <my:complete>false</my:complete>
+    <my:task_due_date xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2004-07-20</my:task_due_date>
+    <my:CustomerData>
+        <my:customer_name>Freeman</my:customer_name>
+        <my:customer_email>ty@credera.com</my:customer_email>
+        <my:issue_description>asdfasdf</my:issue_description>
+    </my:CustomerData>
+    <my:EmployeeData>
+        <my:employee_fullname>Anderson1, Ty</my:employee_fullname>
+        <my:occupation>Delivery Specialist</my:occupation>
+    </my:EmployeeData>
+</my:TaskData>

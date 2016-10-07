@@ -1,0 +1,2 @@
+[Installation]
+Extract all files to c:\OfficeProgramming. Be sure to select "Include original file path" to maintain the folder structure. Once extracted, the files are ready to be used along with the text of the book.
